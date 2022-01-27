@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Materia
 
 def view_b(request):
     context={
@@ -14,3 +15,8 @@ def view_c(request):
                   'Nicola Spina':[("Matematica",7.5,2),("Italiano",6,2),("Inglese",4,3),("Storia",8.5,2),("Geografia",8,2)]}
     }
     return render(request,"view_c.html",context)
+
+def view_d(request):
+    materie=Materia.objects.all()
+    context = {"materie": materie}
+    return render(request, "view_d.html", context)

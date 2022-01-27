@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{%block title%} {{block.super}} | Materie {%endblock title%}
+
+
+
+{%block content%}
+   <h4>Materie:</h4>
+    {% for materia in materie %}
+        <p><strong>Nome:</strong>{{materia.nome}}</p>
+        <hr>
+        {% endfor %}
+
+{%endblock content%}
